@@ -4,3 +4,5 @@ __pycache__
 .env
 .images
 .pnrlog
+.ruff_cache
+debug.log
