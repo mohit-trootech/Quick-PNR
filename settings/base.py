@@ -1,7 +1,7 @@
 from pathlib import Path
 from os.path import join
 from utils.constants import Settings, EmailConfig, CeleryConfig
-from dj_database_url import config
+from dj_database_url import parse
 from django.utils.timezone import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "pnr",
+    "quickpnr",
     "users",
 ]
 # -------------------------------------------------
@@ -69,8 +70,9 @@ WSGI_APPLICATION = Settings.WSGI_APPLICATION
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 # -------------------------------------------------
+DATABASES = {}
 
-DATABASES = {"default": config(Settings.DATABASE_URL)}
+DATABASES["default"] = parse(Settings.DJANGO_DATABASE_URL)
 
 
 # Password validation

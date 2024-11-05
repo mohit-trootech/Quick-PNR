@@ -1,4 +1,5 @@
 from dotenv import dotenv_values
+from django.utils.translation import gettext_noop as _
 
 env = dotenv_values(".env")
 
@@ -12,7 +13,7 @@ class Settings:
     ROOT_URLCONF = "quickpnr.urls"
     AUTH_USER_MODEL = "users.User"
     WSGI_APPLICATION = "quickpnr.wsgi.application"
-    DATABASE_URL = env.get("DATABASE_URL")
+    DJANGO_DATABASE_URL = env.get("DJANGO_DATABASE_URL")
     LANGUAGE_CODE = "en-us"
     TIME_ZONE = "Asia/Kolkata"
     USE_I18N = True
@@ -46,3 +47,23 @@ class CeleryConfig:
     """Celery Configuration"""
 
     CELERY_BROKER_URL = "redis://localhost:6379/0"
+
+
+# Urls Namespaces & Reverse
+# =====================================================
+class Urls:
+    """Urls Namespace & Reverses"""
+
+
+# Email Templates
+# =====================================================
+class EmailTemplates:
+    """Email Templates"""
+
+    VERIFY_EMAIL = "verify_email"
+    REGISTRED_SUCCESSFULLY = "registered"
+
+    EMAIL_TYPES = (
+        (VERIFY_EMAIL, _("Verify Email")),
+        (REGISTRED_SUCCESSFULLY, _("Registered Successfully")),
+    )

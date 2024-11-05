@@ -2,11 +2,10 @@ import os
 from celery import Celery
 from django.conf import settings
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.develop")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.dev")
 
-app = Celery("rewards")  # Replace 'your_project' with your project's name.
+app = Celery("quickpnr")
 
-# Configure Celery using settings from Django settings.py.
 app.config_from_object("django.conf:settings", namespace="CELERY")
 
 
