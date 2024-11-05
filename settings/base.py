@@ -10,6 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Auth User Model
 AUTH_USER_MODEL = Settings.AUTH_USER_MODEL
+APPEND_SLASH = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # -------------------------------------------------
@@ -28,9 +29,13 @@ INSTALLED_APPS = [
     "pnr",
     "quickpnr",
     "users",
+    "corsheaders",
 ]
+
+# Middlewares
 # -------------------------------------------------
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

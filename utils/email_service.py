@@ -6,7 +6,7 @@ from utils.utils import get_model
 from django_extensions.db.models import ActivatorModel
 from utils.constants import EmailTemplates
 
-EmailTemplate = get_model("users", "EmailTemplate")
+EmailTemplate = get_model("quickpnr", "EmailTemplate")
 Otp = get_model(app_name="users", model_name="Otp")
 
 

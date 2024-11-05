@@ -1,9 +1,12 @@
 from rest_framework import serializers
 from utils.utils import get_model
-from django.contrib.auth.password_validation import validate_password
+from django.contrib.auth.password_validation import (
+    validate_password as password_strength,
+)
+
 from users.contants import UserRegistrationMessages
 
-User = get_model("user", "User")
+User = get_model("users", "User")
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
@@ -24,13 +27,10 @@ class RegistrationSerializer(serializers.ModelSerializer):
             "last_name",
             "confirm_password",
         ]
-        extra_kwargs = {
-            "password": {"write_only": True},
-            "validators": [validate_password],
-        }
 
     def validate_password(self, password):
         """Validate Password Matches with Confirm Password"""
+        password_strength(password)
         if password == self.initial_data["confirm_password"]:
             return super().validate(password)
         return serializers.ValidationError(
@@ -38,8 +38,12 @@ class RegistrationSerializer(serializers.ModelSerializer):
         )
 
     def create(self, validated_data):
-        password = validated_data.pop("password")
+        password = validated_data.pop("confirm_password")
         user = User(**validated_data)
         user.set_password(password)
         user.save()
         return user
+
+
+class LoginSerializer(serializers.Serializer):
+    """User Login Serializer"""
