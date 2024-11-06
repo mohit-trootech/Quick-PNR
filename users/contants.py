@@ -43,3 +43,9 @@ class UserRegistrationMessages:
     PASSWORD_DOES_NOT_MATCH = _("Password Does Not Match")
     EMAIL_EXIST_ERROR = _("Email Already Exists")
     USERNAME_ALREADY_EXISTS = _("Username Already Exists")
+
+
+class AuthConstantsMessages:
+    """Auth Constants Messages"""
+
+    INVALID_EMAIL_OR_PASSWORD = _("Invalid Email or Password")
