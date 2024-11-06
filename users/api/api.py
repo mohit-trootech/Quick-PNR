@@ -5,8 +5,10 @@ from users.api.serializers import (
     RegistrationSerializer,
     LoginSerializer,
     UserSerializer,
+    EmailUpdateSerializer,
+    EmailVerifySerializer,
 )
-from users.tasks import registration_mail
+from users.tasks import registration_mail, generate_otp
 from utils.utils import AuthService
 
 User = get_model("users", "User")
@@ -32,17 +34,14 @@ class LoginApiView(views.APIView):
     permission_classes = [permissions.AllowAny]
 
     def post(self, *args, **kwargs):
-        try:
-            serializer = self.serializer_class(
-                data=self.request.data, context={"request": self.request}
-            )
-            serializer.is_valid(raise_exception=True)
-            return Response(
-                AuthService().get_auth_tokens_for_user(serializer.validated_data),
-                status=status.HTTP_200_OK,
-            )
-        except BaseException as err:
-            raise Response({"message": str(err)}, status=status.HTTP_400_BAD_REQUEST)
+        serializer = self.serializer_class(
+            data=self.request.data, context={"request": self.request}
+        )
+        serializer.is_valid(raise_exception=True)
+        return Response(
+            AuthService().get_auth_tokens_for_user(serializer.validated_data),
+            status=status.HTTP_200_OK,
+        )
 
 
 class UserProfileView(views.APIView):
@@ -56,22 +55,62 @@ class UserProfileView(views.APIView):
 
     def get(self, *args, **kwargs):
         """Return User Profile"""
-        try:
-            instance = self.get_object(*args, **kwargs)
-            serializer = self.serializer_class(instance)
-            return Response(serializer.data)
-        except BaseException as err:
-            raise Response({"message": str(err)}, status=status.HTTP_400_BAD_REQUEST)
+        instance = self.get_object(*args, **kwargs)
+        serializer = self.serializer_class(instance)
+        return Response(serializer.data)
 
     def patch(self, request, *args, **kwargs):
         """Update User Profile"""
+        instance = self.get_object()
+        serializer = self.serializer_class(instance, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+
+class EmailUpdateView(views.APIView):
+    """User Email Update View"""
+
+    serializer_class = EmailUpdateSerializer
+
+    def patch(self, *args, **kwargs):
+        """Update User Email"""
+        serializer = self.serializer_class(
+            self.request.user, data=self.request.data, partial=True
+        )
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class EmailVerifyView(views.APIView):
+    """Email Verification API View"""
+
+    serializer_class = EmailVerifySerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        """Send Email Verification OTP"""
+        generate_otp.delay(request.user.id)
         try:
-            instance = self.get_object()
-            serializer = self.serializer_class(
-                instance, data=request.data, partial=True
+            return Response(
+                {"message": "OTP Sent Successfully"}, status=status.HTTP_200_OK
             )
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            return Response(serializer.data)
-        except BaseException as err:
-            raise Response({"message": str(err)}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as err:
+            raise Response(
+                {
+                    "message": f"Failed to send OTP, {err}",
+                },
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+    def post(self, request, *args, **kwargs):
+        """Verify User Email"""
+        serializer = self.serializer_class(
+            data=request.data, context={"request": request}
+        )
+        serializer.is_valid(raise_exception=True)
+        return Response(
+            {"message": "Email Verified Successfully"},
+            status=status.HTTP_200_OK,
+        )

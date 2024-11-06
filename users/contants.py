@@ -49,3 +49,5 @@ class AuthConstantsMessages:
     """Auth Constants Messages"""
 
     INVALID_EMAIL_OR_PASSWORD = _("Invalid Email or Password")
+    OTP_EXPIRED = _("OTP Expired, Please Generate a New OTP.")
+    INVALID_OTP = _("Invalid OTP, Please Try Again")

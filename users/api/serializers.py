@@ -3,11 +3,12 @@ from utils.utils import get_model
 from django.contrib.auth.password_validation import (
     validate_password as password_strength,
 )
-
-from users.contants import UserRegistrationMessages, AuthConstantsMessages
+from users.contants import UserRegistrationMessages, AuthConstantsMessages, ModelFields
 from django.contrib.auth import authenticate
+from django.utils.timezone import now
 
 User = get_model("users", "User")
+Otp = get_model("users", "Otp")
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
@@ -50,14 +51,14 @@ class RegistrationSerializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.Serializer):
     """User Login Serializer"""
 
-    email = serializers.EmailField()
+    username = serializers.CharField()
     password = serializers.CharField()
 
     def validate(self, attrs):
         """Validate User Credentials"""
         login_data = {
             "password": attrs.get("password"),
-            "username": attrs.get("email").lower(),
+            "username": attrs.get("username"),
         }
         user = authenticate(**login_data)
         if not user:
@@ -67,25 +68,9 @@ class LoginSerializer(serializers.Serializer):
         return user
 
 
-class SimplifiedUserSerializer(serializers.ModelSerializer):
-    """User View Serializer"""
-
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = [
-            "id",
-            "username",
-            "email",
-            "get_full_name",
-            "age",
-            "address",
-            "image",
-            "is_verified",
-        ]
-
-
-class UserSerializer(SimplifiedUserSerializer):
-    class Meta(SimplifiedUserSerializer.Meta):
         fields = [
             "id",
             "username",
@@ -99,3 +84,41 @@ class UserSerializer(SimplifiedUserSerializer):
             "last_login",
             "date_joined",
         ]
+
+
+class EmailUpdateSerializer(serializers.ModelSerializer):
+    """Update User Email"""
+
+    class Meta:
+        model = User
+        fields = ["email"]
+
+    def update(self, instance, validated_data):
+        """Update User Email"""
+        instance.is_verified = ModelFields.INACTIVE_STATUS
+        instance.save(update_fields=["is_verified"])
+        return super().update(instance, validated_data)
+
+
+class EmailVerifySerializer(serializers.ModelSerializer):
+    """Email Verification Serializer"""
+
+    class Meta:
+        model = Otp
+        fields = ["otp"]
+
+    def validate_otp(self, value):
+        """Validate OTP"""
+        # Check it OTP Expired
+        breakpoint()
+        user = self.context["request"].user
+        if user.otp.expiry < now():
+            """If Expiry Date if Smaller Than Current Datetime Means OTP is Expired Hence Raise OTP Expiry Validation Error"""
+            raise serializers.ValidationError(AuthConstantsMessages.OTP_EXPIRED)
+        if user.otp.otp != value:
+            """Check if OTP is Validated"""
+            raise serializers.ValidationError(AuthConstantsMessages.INVALID_OTP)
+        user.otp.delete()
+        user.is_verified = ModelFields.ACTIVE_STATUS
+        user.save(update_fields=["is_verified"])
+        return value

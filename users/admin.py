@@ -3,6 +3,9 @@ from utils.utils import get_model
 from django.contrib.auth.admin import UserAdmin
 
 User = get_model("users", "User")
+Otp = get_model("users", "Otp")
+
+admin.site.register(Otp)
 
 
 @admin.register(User)
