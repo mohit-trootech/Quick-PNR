@@ -1,5 +1,6 @@
 from dotenv import dotenv_values
 from django.utils.translation import gettext_noop as _
+from os import path, getcwd
 
 env = dotenv_values(".env")
 
@@ -56,7 +57,7 @@ class Urls:
 
 
 # Email Templates
-# =====================================================
+# ============================BASE_DIR=========================
 class EmailTemplates:
     """Email Templates"""
 
@@ -67,3 +68,40 @@ class EmailTemplates:
         (VERIFY_EMAIL, _("Verify Email")),
         (REGISTRED_SUCCESSFULLY, _("Registered Successfully")),
     )
+
+
+# PNR Utility Constants
+# =====================================================
+class PnrConstants:
+    """PNR Utility Constants"""
+
+    SCRAPPING_URL = "https://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html"
+
+
+# Elements IDs
+# =====================================================
+class IDs:
+    """Scrapping Element IDs"""
+
+    PNR_INPUT = "inputPnrNo"
+    CAPTCHA_MODAL = "modal1"
+    CAPTCHA_IMAGE = "CaptchaImgID"
+    CAPTCHA_SUBMIT = "submitPnrNo"
+    INPUT_CACHE = "inputCaptcha"
+
+
+# Elements & Their Types
+# =====================================================
+class ElementTypes:
+    """Scrapping Element Types"""
+
+    INPUT = "input"
+    BUTTON = "button"
+    IMAGE = "img"
+    SRC = "src"
+    TEXT = "text"
+    TYPE = "type"
+    NUMBER = "number"
+    SUBMIT = "submit"
+    CAPTCHA_IMAGE_TEMPORARY = path.join(getcwd(), ".images/captcha.png")
+    PAGE_SS = path.join(getcwd(), ".images/page.png")

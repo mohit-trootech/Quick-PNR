@@ -110,7 +110,6 @@ class EmailVerifySerializer(serializers.ModelSerializer):
     def validate_otp(self, value):
         """Validate OTP"""
         # Check it OTP Expired
-        breakpoint()
         user = self.context["request"].user
         if user.otp.expiry < now():
             """If Expiry Date if Smaller Than Current Datetime Means OTP is Expired Hence Raise OTP Expiry Validation Error"""
