@@ -32,8 +32,10 @@ class ModelsConstants:
 class MessageConstants:
     """Message Constants"""
 
+    MULTIPLE_PNR_FOUND = "Multiple PNR Found"
     PNR_NOT_FOUND = "PNR Not Found"
     INVALID_PNR = "Invalid PNR Number"
     INVALID_PAGE = "Invalid Page"
     CAPTCHA_MODEL_OPENED = "Captcha Modal Opened"
+    PNR_NUMBER_ENTERED = "PNR Number Entered Successfully"
     PNR_DETAILS_MAILED = "PNR Details Mailed Successfully"

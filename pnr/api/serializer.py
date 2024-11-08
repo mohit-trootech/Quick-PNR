@@ -83,5 +83,4 @@ class PnrDetailSerializer(serializers.ModelSerializer):
                 serializer = PassengerDetailSerializer(data=passenger)
             serializer.is_valid(raise_exception=True)
             serializer.save()
-        breakpoint()
         return super().update(instance, validated_data)

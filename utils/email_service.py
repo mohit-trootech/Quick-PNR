@@ -45,7 +45,7 @@ class EmailService:
     def registration_mail(self, user):
         """Sends a registration email to the specified user."""
         template = self.get_template(email_type=EmailTemplates.REGISTRED_SUCCESSFULLY)
-        return self.send_email(
+        return self.send_mail(
             template.subject,
             template.body.format(username=user.username),
             template.is_html,

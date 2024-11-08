@@ -3,6 +3,7 @@ from os.path import join
 from utils.constants import Settings, EmailConfig, CeleryConfig
 from dj_database_url import parse
 from django.utils.timezone import timedelta
+from celery.schedules import crontab
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # -------------------------------------------------
@@ -169,9 +170,9 @@ CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_EXTENDED = True
 CELERY_BEAT_SCHEDULE = {
-    "draw_winners": {
-        "task": "rewards.tasks.draw_winners",
-        "schedule": 300.0,
+    "soft_delete_pnr_details": {
+        "task": "quickpnr.tasks.flush_pnr",
+        "schedule": crontab(minute=00, hour=8),
     },
 }
 

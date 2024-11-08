@@ -56,6 +56,7 @@ class PnrScrapping:
                 == ElementTypes.BUTTON
             ):
                 self.pnr_input.send_keys(self.pnr)
+                print(MessageConstants.PNR_NUMBER_ENTERED)
                 self.capcha_modal_btn.click()
                 if self.capcha_modal_btn.is_displayed():
                     print(MessageConstants.CAPTCHA_MODEL_OPENED)
@@ -76,11 +77,11 @@ class PnrScrapping:
     def __call__(self, *args, **kwargs):
         try:
             self.enter_pnr_and_open_captcha_modal_condition()
-            # Sleep 5 Seconds Allows Modal to Load Captcha & Open Modal
-            sleep(5)
+            # Sleep 4 Seconds Allows Modal to Load Captcha & Open Modal
+            sleep(4)
             self.handle_captcha_image()
-            # Sleep 5 Seconds Allows Data to Load
-            sleep(5)
+            # Sleep 4 Seconds Allows Data to Load
+            sleep(4)
             data = FormatData(self.driver.find_element(By.ID, "pnrOutputDiv"))()
             data["pnr"] = self.pnr
             return data
