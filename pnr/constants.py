@@ -27,3 +27,13 @@ class ModelsConstants:
     """Models Constants"""
 
     PASSENGERS_DETAILS = "passengers_details"
+
+
+class MessageConstants:
+    """Message Constants"""
+
+    PNR_NOT_FOUND = "PNR Not Found"
+    INVALID_PNR = "Invalid PNR Number"
+    INVALID_PAGE = "Invalid Page"
+    CAPTCHA_MODEL_OPENED = "Captcha Modal Opened"
+    PNR_DETAILS_MAILED = "PNR Details Mailed Successfully"

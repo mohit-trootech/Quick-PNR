@@ -63,10 +63,12 @@ class EmailTemplates:
 
     VERIFY_EMAIL = "verify_email"
     REGISTRED_SUCCESSFULLY = "registered"
+    PNR_DETAILS = "pnr_details"
 
     EMAIL_TYPES = (
         (VERIFY_EMAIL, _("Verify Email")),
         (REGISTRED_SUCCESSFULLY, _("Registered Successfully")),
+        (PNR_DETAILS, _("PNR Details")),
     )
 
 

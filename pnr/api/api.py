@@ -7,6 +7,8 @@ from utils.utils import get_model
 from utils.scrapping_utils import PnrScrapping
 from django_extensions.db.models import ActivatorModel
 from pnr.api.serializer import PnrDetailSerializer, PnrSerializer
+from utils.exceptions import PNRNotFound
+from pnr.tasks import send_pnr_details
 
 PnrDetail = get_model(app_name="pnr", model_name="PnrDetail")
 PassengerDetail = get_model(app_name="pnr", model_name="PassengerDetail")
@@ -22,24 +24,31 @@ class PnrScrapper(APIView):
                 pnr=pnr_serializer.validated_data["pnr"],
                 status=ActivatorModel.ACTIVE_STATUS,
             )
-            pnr_details_serializer = PnrDetailSerializer(pnr_details)
-            return Response(pnr_details_serializer.data, status=status.HTTP_200_OK)
+            serializer = PnrDetailSerializer(pnr_details)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         except PnrDetail.DoesNotExist:
             # If PNR Not Exists Fetch PNR
-            scrapper = PnrScrapping(pnr_serializer.validated_data["pnr"])
-            data = scrapper()
-            serializer = PnrDetailSerializer(data=data)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            try:
+                scrapper = PnrScrapping(pnr_serializer.validated_data["pnr"])
+                data = scrapper()
+                serializer = PnrDetailSerializer(data=data)
+                serializer.is_valid(raise_exception=True)
+                serializer.save()
+                send_pnr_details.delay(request.user.id, serializer.data["id"])
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            except PNRNotFound as pnr_not_found:
+                print(pnr_not_found)
+                return Response(
+                    {"message": str(pnr_not_found)}, status=status.HTTP_400_BAD_REQUEST
+                )
         except PnrDetail.MultipleObjectsReturned:
             return Response(
                 {"message": "Multiple PNR Found"}, status=status.HTTP_400_BAD_REQUEST
             )
         except ValidationError as ve:
-            raise Response({"message": str(ve)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": str(ve)}, status=status.HTTP_400_BAD_REQUEST)
         except Exception as err:
-            raise Response(
+            return Response(
                 {"message": str(err)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
@@ -53,6 +62,7 @@ class PnrScrapper(APIView):
             serializer = PnrDetailSerializer(obj, data=data, partial=True)
             serializer.is_valid(raise_exception=True)
             serializer.save()
+            send_pnr_details.delay(request.user.id, serializer.data["id"])
             return Response(serializer.data, status=status.HTTP_200_OK)
         except PnrDetail.DoesNotExist:
             return Response(

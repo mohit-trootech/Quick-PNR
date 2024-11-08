@@ -2,11 +2,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from utils.constants import ElementTypes, PnrConstants, IDs
+from pnr.constants import MessageConstants
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utils.image_filtering import CaptchaImageFiltering
 from datetime import datetime
 from time import sleep
+from utils.exceptions import PNRNotFound
 
 
 class PnrScrapping:
@@ -56,9 +58,9 @@ class PnrScrapping:
                 self.pnr_input.send_keys(self.pnr)
                 self.capcha_modal_btn.click()
                 if self.capcha_modal_btn.is_displayed():
-                    print("Captcha Modal Opened")
+                    print(MessageConstants.CAPTCHA_MODEL_OPENED)
         else:
-            print("Invalid Input")
+            raise Exception(MessageConstants.INVALID_PAGE)
 
     def handle_captcha_image(self):
         """Handle Captcha Image"""
@@ -83,7 +85,11 @@ class PnrScrapping:
             data["pnr"] = self.pnr
             return data
         except Exception as err:
-            raise Exception(err)
+            error = self.driver.find_element(By.ID, "errorMessage")
+            if error:
+                raise PNRNotFound(error.get_attribute("innerHTML"))
+            else:
+                raise Exception(err)
         finally:
             self.driver.quit()
 
@@ -171,5 +177,5 @@ class FormatData:
         journey_data.update(self.get_other_details())
         return {
             **journey_data,
-            "passenger_details": passenger_data,
+            "passengers_details": passenger_data,
         }

@@ -74,3 +74,84 @@ class EmailService:
                 otp=otp.otp, expiry=otp.expiry.strftime("%Y-%m-%d %H::%M::%S")
             ),
         )
+
+    def pnr_status_mail(self, user, pnr_detail):
+        """Sends PNR Status Details to User's Email Address"""
+        template = self.get_template(email_type=EmailTemplates.PNR_DETAILS)
+        passenger_details = "\n".join(
+            [
+                f"""
+ <ul
+                                          style="
+                                            list-style: none;
+                                            padding: 0;
+                                            margin: 0;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            background-color: #e0e0e0;
+                                            border-radius: 8px;
+                                            padding: 8px;
+                                          "
+                                        >
+                                          <li
+                                            style="
+                                              margin: 0 8px;
+                                              font-size: 14px;
+                                              font-weight: bold;
+                                            "
+                                          >
+                                            Name: {passenger['name']}
+                                          </li>
+                                          <li
+                                            style="
+                                              margin: 0 8px;
+                                              font-size: 14px;
+                                            "
+                                          >
+                                            Booking:
+                                            {passenger['booking_status']}
+                                          </li>
+                                          <li
+                                            style="
+                                              margin: 0 8px;
+                                              font-size: 14px;
+                                            "
+                                          >
+                                            Current:
+                                            {passenger['current_status']}
+                                          </li>
+                                        </ul>"""
+                for passenger in pnr_detail["passengers_details"]
+            ]
+        )
+        return (
+            self.send_mail(
+                template.subject,
+                template.body,
+                template.is_html,
+                [user.email],
+                template.template.format(
+                    pnr=pnr_detail["pnr"],
+                    train_number=pnr_detail["train_number"],
+                    train_name=pnr_detail["train_name"],
+                    reserved_class=pnr_detail["reserved_class"],
+                    boarding_date=pnr_detail["boarding_date"][0:10],
+                    reserved_from=pnr_detail["reserved_from"],
+                    reserved_to=pnr_detail["reserved_to"],
+                    boarding_point=pnr_detail["boarding_point"],
+                    passengers_details=passenger_details,
+                    fare=pnr_detail["fare"],
+                    remark=(
+                        pnr_detail["remark"]
+                        if pnr_detail["remark"] is not None
+                        else "No remarks"
+                    ),
+                    train_status=(
+                        pnr_detail["train_status"]
+                        if pnr_detail["train_status"]
+                        else "Status not available"
+                    ),
+                    charting_status=pnr_detail["charting_status"],
+                ),
+            ),
+        )

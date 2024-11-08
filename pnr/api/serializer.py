@@ -2,6 +2,8 @@
 from rest_framework import serializers
 from utils.utils import get_model
 from django.utils.timezone import timedelta
+from utils.exceptions import InvalidPnrNumber
+from pnr.constants import MessageConstants
 
 PnrDetail = get_model(app_name="pnr", model_name="PnrDetail")
 PassengerDetail = get_model(app_name="pnr", model_name="PassengerDetail")
@@ -15,7 +17,7 @@ class PnrSerializer(serializers.Serializer):
     def validate_pnr(self, value):
         """validate pnr number"""
         if not len(str(value)) == 10:
-            raise serializers.ValidationError("Invalid PNR Number")
+            raise InvalidPnrNumber(MessageConstants.INVALID_PNR)
         return value
 
 
@@ -55,10 +57,31 @@ class PnrDetailSerializer(serializers.ModelSerializer):
         validated_data["expiry"] = validated_data["boarding_date"] + timedelta(days=5)
         instance = super().create(validated_data)
         # Create Passenger Details Instances using Serializer
-        passenger_details = self.initial_data.pop("passenger_details")
-        for passenger in passenger_details:
+        passengers_details = self.initial_data.pop("passengers_details")
+        for passenger in passengers_details:
             passenger["pnr_details"] = instance.id
             serializer = PassengerDetailSerializer(data=passenger)
             serializer.is_valid(raise_exception=True)
             serializer.save()
         return instance
+
+    def update(self, instance, validated_data):
+        instance = super().update(instance=instance, validated_data=validated_data)
+        # Update Passenger Details Instances using Serializer
+        passengers_details = self.initial_data.pop("passengers_details")
+        for passenger in passengers_details:
+            passenger["pnr_details"] = instance.id
+            # Update Passenger Details
+            try:
+                obj = PassengerDetail.objects.get(
+                    name=passenger["name"], pnr_details=instance.id
+                )
+                serializer = PassengerDetailSerializer(
+                    obj, data=passenger, partial=True
+                )
+            except PassengerDetail.DoesNotExist:
+                serializer = PassengerDetailSerializer(data=passenger)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+        breakpoint()
+        return super().update(instance, validated_data)

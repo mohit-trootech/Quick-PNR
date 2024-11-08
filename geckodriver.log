@@ -2006,3 +2006,523 @@ Read port: 33503
 1730985933934	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
 console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/AcRdlIGS79LukGtzzMVNJz18Br2HfaVpadgl0jE5oOQ.js line 2 > eval line 3449 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_928504414, line 449: Script terminated by timeout at:
+bC@https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_928504414:449:122
+eC/this.Y<@https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_928504414:446:426
+f@https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_928504414:97:334
+of/<@https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_928504414:97:389
+eC/this.ba@https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_928504414:447:59
+
+1730985976780	Marionette	INFO	Stopped listening on port 33503
+JavaScript warning: https://a.vdo.ai/core/dependencies_dev_2372/vdo.player.8.0.js, line 2: Script terminated by timeout at:
+ns/<@https://a.vdo.ai/core/dependencies_dev_2372/vdo.player.8.0.js:2:129455
+
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/local/share/doc /usr/local/share/doc none bind,ro 0 0): cannot open directory "/usr/local/share": permission denied
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/gimp/2.0/help /usr/share/gimp/2.0/help none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/gimp/2.0/help" because it would affect the host in "/var/lib/snapd"
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/javascript/jquery /usr/share/javascript/jquery none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/javascript/jquery" because it would affect the host in "/var/lib/snapd"
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/javascript/sphinxdoc /usr/share/javascript/sphinxdoc none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/javascript/sphinxdoc" because it would affect the host in "/var/lib/snapd"
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/sphinx_rtd_theme /usr/share/sphinx_rtd_theme none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/sphinx_rtd_theme" because it would affect the host in "/var/lib/snapd"
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/xubuntu-docs /usr/share/xubuntu-docs none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/xubuntu-docs" because it would affect the host in "/var/lib/snapd"
+1731037629932	geckodriver	INFO	Listening on 127.0.0.1:55873
+1731037630627	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "38851" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileW47aMj"
+*** You are running in headless mode.
+Gtk-Message: 09:17:10.663: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731037631544	Marionette	INFO	Marionette enabled
+1731037631960	Marionette	INFO	Listening on port 35613
+WebDriver BiDi listening on ws://127.0.0.1:38851
+Read port: 35613
+1731037632110	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 4564 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 6127 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/2WUAcaouH542UcwAf0PUwDZs6rs265ZtC2l7OM-ZKkE.js line 2 > eval line 1239 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731037662901	Marionette	INFO	Stopped listening on port 35613
+console.warn: services.settings: main/normandy-recipes-capabilities sync interrupted by shutdown
+console.warn: services.settings: main/sites-classification sync interrupted by shutdown
+console.warn: services.settings: main/anti-tracking-url-decoration sync interrupted by shutdown
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.error: (new AbortError("IndexedDB: main/nimbus-preview getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1731037686451	geckodriver	INFO	Listening on 127.0.0.1:54005
+1731037686838	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "49029" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileIz1Xp2"
+*** You are running in headless mode.
+Gtk-Message: 09:18:06.872: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731037687321	Marionette	INFO	Marionette enabled
+1731037687639	Marionette	INFO	Listening on port 42651
+WebDriver BiDi listening on ws://127.0.0.1:49029
+Read port: 42651
+1731037687964	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 5662 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 491 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731037722810	Marionette	INFO	Stopped listening on port 42651
+1731038860418	geckodriver	INFO	Listening on 127.0.0.1:57759
+1731038860777	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "32845" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileCZgM3C"
+*** You are running in headless mode.
+Gtk-Message: 09:37:40.812: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731038861318	Marionette	INFO	Marionette enabled
+1731038861622	Marionette	INFO	Listening on port 41823
+WebDriver BiDi listening on ws://127.0.0.1:32845
+Read port: 41823
+1731038861859	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 2651 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=AMsySZZT2p-RqNF2vcs7qwCCoAnU&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 6987 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731038897579	Marionette	INFO	Stopped listening on port 41823
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731038916488	geckodriver	INFO	Listening on 127.0.0.1:42303
+1731038916768	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "34451" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileoJi7Q5"
+*** You are running in headless mode.
+Gtk-Message: 09:38:36.803: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731038917277	Marionette	INFO	Marionette enabled
+1731038917573	Marionette	INFO	Listening on port 36249
+WebDriver BiDi listening on ws://127.0.0.1:34451
+Read port: 36249
+1731038917827	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 7351 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 7788 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731038965101	Marionette	INFO	Stopped listening on port 36249
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731039232015	geckodriver	INFO	Listening on 127.0.0.1:47427
+1731039232361	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "33619" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiletRTTHb"
+*** You are running in headless mode.
+Gtk-Message: 09:43:52.393: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731039232833	Marionette	INFO	Marionette enabled
+1731039233165	Marionette	INFO	Listening on port 37947
+Read port: 37947
+WebDriver BiDi listening on ws://127.0.0.1:33619
+1731039233259	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 3254 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 5931 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731039279899	Marionette	INFO	Stopped listening on port 37947
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731039335977	geckodriver	INFO	Listening on 127.0.0.1:47719
+1731039336262	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "42127" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilejZ9sJa"
+*** You are running in headless mode.
+Gtk-Message: 09:45:36.293: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731039336731	Marionette	INFO	Marionette enabled
+1731039337068	Marionette	INFO	Listening on port 39691
+WebDriver BiDi listening on ws://127.0.0.1:42127
+Read port: 39691
+1731039337335	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 3373 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 6708 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731039369414	Marionette	INFO	Stopped listening on port 39691
+console.error: services.settings:
+Object
+  - prototype Object
+    - columnNumber = 0
+    - data = null
+    - filename = resource://gre/modules/ServiceRequest.sys.mjs
+    - lineNumber = 133
+    - location = {"name":"open","filename":"resource://gre/modules/ServiceRequest.sys.mjs","sourceId":24,"lineNumber":133,"columnNumber":11,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/Utils.sys.mjs","name":"fetch/<","sourceId":23,"lineNumber":268,"columnNumber":15,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/Utils.sys.mjs","name":"fetch","sourceId":23,"lineNumber":219,"columnNumber":12,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/RemoteSettingsClient.sys.mjs","name":"_validateCollectionSignature","sourceId":21,"lineNumber":1009,"columnNumber":47,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/RemoteSettingsClient.sys.mjs","name":"maybeSync","sourceId":21,"lineNumber":726,"columnNumber":26,"asyncCause":null,"asyncCaller":null,"caller":null,"formattedStack":"maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}},"formattedStack":"_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\nmaybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}},"formattedStack":"fetch@resource://services-settings/Utils.sys.mjs:219:12\n_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\nmaybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}},"formattedStack":"fetch/<@resource://services-settings/Utils.sys.mjs:268:15\nfetch@resource://services-settings/Utils.sys.mjs:219:12\n_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\nmaybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}},"formattedStack":"open@resource://gre/modules/ServiceRequest.sys.mjs:133:11\nfetch/<@resource://services-settings/Utils.sys.mjs:268:15\nfetch@resource://services-settings/Utils.sys.mjs:219:12\n_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\nmaybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}}
+    - message =
+    - name =
+    - result = 2152071198
+    - stack = open@resource://gre/modules/ServiceRequest.sys.mjs:133:11|fetch/<@resource://services-settings/Utils.sys.mjs:268:15|fetch@resource://services-settings/Utils.sys.mjs:219:12|_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47|maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26|
+  - prototype Object
+console.warn: services.settings: main/fingerprinting-protection-overrides sync interrupted by shutdown
+console.warn: services.settings: main/top-sites sync interrupted by shutdown
+console.warn: services.settings: main/translations-models sync interrupted by shutdown
+console.warn: services.settings: main/search-config-v2 sync interrupted by shutdown
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.warn: services.settings: main/devtools-compatibility-browsers sync interrupted by shutdown
+console.warn: services.settings: main/search-default-override-allowlist sync interrupted by shutdown
+console.warn: services.settings: main/search-telemetry-v2 sync interrupted by shutdown
+console.warn: services.settings: main/cookie-banner-rules-list sync interrupted by shutdown
+console.error: (new Error("IndexedDB: main/normandy-recipes getLastModified() IndexedDB:  execute() The application is shutting down", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1731039579205	geckodriver	INFO	Listening on 127.0.0.1:56623
+1731039579507	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "40035" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileNd77uF"
+*** You are running in headless mode.
+Gtk-Message: 09:49:39.540: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731039580002	Marionette	INFO	Marionette enabled
+1731039580328	Marionette	INFO	Listening on port 32997
+WebDriver BiDi listening on ws://127.0.0.1:40035
+Read port: 32997
+1731039580570	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 4720 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 6292 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731039618256	Marionette	INFO	Stopped listening on port 32997
+1731039748138	geckodriver	INFO	Listening on 127.0.0.1:60217
+1731039748541	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "36885" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileDeOk0A"
+*** You are running in headless mode.
+Gtk-Message: 09:52:28.575: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731039749132	Marionette	INFO	Marionette enabled
+1731039749479	Marionette	INFO	Listening on port 33373
+WebDriver BiDi listening on ws://127.0.0.1:36885
+Read port: 33373
+1731039749722	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 77 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 3037 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 5666 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731039787873	Marionette	INFO	Stopped listening on port 33373
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731039823092	geckodriver	INFO	Listening on 127.0.0.1:52419
+1731039823531	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "48681" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileKVtANX"
+*** You are running in headless mode.
+Gtk-Message: 09:53:43.563: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731039823996	Marionette	INFO	Marionette enabled
+1731039824336	Marionette	INFO	Listening on port 41127
+WebDriver BiDi listening on ws://127.0.0.1:48681
+Read port: 41127
+1731039824575	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 3783 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731039856896	Marionette	INFO	Stopped listening on port 41127
+console.error: services.settings:
+Object
+  - prototype Object
+    - columnNumber = 0
+    - data = null
+    - filename = resource://gre/modules/ServiceRequest.sys.mjs
+    - lineNumber = 133
+    - location = {"name":"open","filename":"resource://gre/modules/ServiceRequest.sys.mjs","sourceId":24,"lineNumber":133,"columnNumber":11,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/Utils.sys.mjs","name":"fetch/<","sourceId":23,"lineNumber":268,"columnNumber":15,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/Utils.sys.mjs","name":"fetch","sourceId":23,"lineNumber":219,"columnNumber":12,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/RemoteSettingsClient.sys.mjs","name":"_validateCollectionSignature","sourceId":21,"lineNumber":1009,"columnNumber":47,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/RemoteSettingsClient.sys.mjs","name":"maybeSync","sourceId":21,"lineNumber":726,"columnNumber":26,"asyncCause":null,"asyncCaller":null,"caller":null,"formattedStack":"maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}},"formattedStack":"_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\nmaybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}},"formattedStack":"fetch@resource://services-settings/Utils.sys.mjs:219:12\n_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\nmaybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}},"formattedStack":"fetch/<@resource://services-settings/Utils.sys.mjs:268:15\nfetch@resource://services-settings/Utils.sys.mjs:219:12\n_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\nmaybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}},"formattedStack":"open@resource://gre/modules/ServiceRequest.sys.mjs:133:11\nfetch/<@resource://services-settings/Utils.sys.mjs:268:15\nfetch@resource://services-settings/Utils.sys.mjs:219:12\n_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\nmaybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26\n","nativeSavedFrame":{}}
+    - message =
+    - name =
+    - result = 2152071198
+    - stack = open@resource://gre/modules/ServiceRequest.sys.mjs:133:11|fetch/<@resource://services-settings/Utils.sys.mjs:268:15|fetch@resource://services-settings/Utils.sys.mjs:219:12|_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47|maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:726:26|
+  - prototype Object
+console.warn: services.settings: main/cookie-banner-rules-list sync interrupted by shutdown
+console.warn: services.settings: main/search-config-icons sync interrupted by shutdown
+console.warn: services.settings: main/urlbar-persisted-search-terms sync interrupted by shutdown
+console.warn: services.settings: main/url-classifier-skip-urls sync interrupted by shutdown
+console.error: ({details:{id:"dd040ff6-583c-d16b-2816-5d8079aba996", last_modified:1724867833754, bucket:"main", collection:"search-telemetry-v2", host:"firefox.settings.services.mozilla.com"}})
+1731040044341	geckodriver	INFO	Listening on 127.0.0.1:35031
+1731040044636	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "45107" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileAzJ3lM"
+*** You are running in headless mode.
+Gtk-Message: 09:57:24.670: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731040045311	Marionette	INFO	Marionette enabled
+1731040045666	Marionette	INFO	Listening on port 37327
+WebDriver BiDi listening on ws://127.0.0.1:45107
+Read port: 37327
+1731040045934	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 786 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 1706 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 3494 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731040081380	Marionette	INFO	Stopped listening on port 37327
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731040101720	geckodriver	INFO	Listening on 127.0.0.1:52671
+1731040102149	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "46273" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileLpUWQ3"
+*** You are running in headless mode.
+Gtk-Message: 09:58:22.182: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731040102607	Marionette	INFO	Marionette enabled
+1731040102928	Marionette	INFO	Listening on port 33161
+WebDriver BiDi listening on ws://127.0.0.1:46273
+Read port: 33161
+1731040103129	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 795 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 7796 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731040139046	Marionette	INFO	Stopped listening on port 33161
+1731040269883	geckodriver	INFO	Listening on 127.0.0.1:42729
+1731040270236	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "41011" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileTgWjfx"
+*** You are running in headless mode.
+Gtk-Message: 10:01:10.268: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731040270720	Marionette	INFO	Marionette enabled
+1731040271026	Marionette	INFO	Listening on port 33641
+Read port: 33641
+WebDriver BiDi listening on ws://127.0.0.1:41011
+1731040271138	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 1031 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 788 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731040304828	Marionette	INFO	Stopped listening on port 33641
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731041725303	geckodriver	INFO	Listening on 127.0.0.1:57433
+1731041725602	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "47385" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilegfDuaq"
+*** You are running in headless mode.
+Gtk-Message: 10:25:25.638: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731041726112	Marionette	INFO	Marionette enabled
+1731041726434	Marionette	INFO	Listening on port 46523
+WebDriver BiDi listening on ws://127.0.0.1:47385
+Read port: 46523
+1731041726674	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=AMsySZZ6uuP0zw8BaUmQwmEuLa3F&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 6461 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 1449 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731041838714	Marionette	INFO	Stopped listening on port 46523
+1731051456981	geckodriver	INFO	Listening on 127.0.0.1:52291
+1731051457798	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "47273" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile1jxitP"
+*** You are running in headless mode.
+Gtk-Message: 13:07:37.844: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731051459011	Marionette	INFO	Marionette enabled
+1731051459461	Marionette	INFO	Listening on port 41191
+WebDriver BiDi listening on ws://127.0.0.1:47273
+Read port: 41191
+1731051459615	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 3014 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731051513381	Marionette	INFO	Stopped listening on port 41191
+1731054078646	geckodriver	INFO	Listening on 127.0.0.1:44139
+1731054078932	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "46825" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileM6Sp9J"
+*** You are running in headless mode.
+Gtk-Message: 13:51:19.017: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731054079948	Marionette	INFO	Marionette enabled
+1731054080357	Marionette	INFO	Listening on port 36339
+Read port: 36339
+WebDriver BiDi listening on ws://127.0.0.1:46825
+1731054080568	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 505 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731054108790	Marionette	INFO	Stopped listening on port 36339
+JavaScript warning: https://a.vdo.ai/core/dependencies_dev_2372/vdo.player.8.0.js, line 2: Script terminated by timeout at:
+monitorCurrentTime_@https://a.vdo.ai/core/dependencies_dev_2372/vdo.player.8.0.js:2:596294
+
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731056555217	geckodriver	INFO	Listening on 127.0.0.1:47567
+1731056556067	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "35015" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilefYvY4B"
+*** You are running in headless mode.
+Gtk-Message: 14:32:36.133: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731056557111	Marionette	INFO	Marionette enabled
+1731056557566	Marionette	INFO	Listening on port 33163
+Read port: 33163
+WebDriver BiDi listening on ws://127.0.0.1:35015
+1731056557698	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 2741 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731056597299	Marionette	INFO	Stopped listening on port 33163
+1731056858872	geckodriver	INFO	Listening on 127.0.0.1:46771
+1731056859243	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "55551" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileVlKC0Y"
+*** You are running in headless mode.
+Gtk-Message: 14:37:39.280: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731056859786	Marionette	INFO	Marionette enabled
+1731056860112	Marionette	INFO	Listening on port 44645
+WebDriver BiDi listening on ws://127.0.0.1:55551
+Read port: 44645
+1731056860321	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 5461 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://static.criteo.net/banners/js/vpaidjs/stable/vpaid-wrapper-static-video.js, line 1: TypeError: this.adsManager is undefined
+1731056896441	Marionette	INFO	Stopped listening on port 44645
+JavaScript warning: https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_640057420, line 53: Script terminated by timeout at:
+Ua@https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_640057420:53:324
+Du.prototype.B@https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_640057420:308:661
+
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731057120033	geckodriver	INFO	Listening on 127.0.0.1:49589
+1731057120377	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "38439" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilewDJMuG"
+*** You are running in headless mode.
+Gtk-Message: 14:42:00.414: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731057120897	Marionette	INFO	Marionette enabled
+1731057121219	Marionette	INFO	Listening on port 33983
+WebDriver BiDi listening on ws://127.0.0.1:38439
+Read port: 33983
+1731057121449	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_2054083021, line 448: Script terminated by timeout at:
+aC@https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_2054083021:448:218
+eC/this.aa@https://imasdk.googleapis.com/js/core/bridge3.675.2_en.html#goog_2054083021:446:29
+
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 693 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731057208117	Marionette	INFO	Stopped listening on port 33983
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731057428390	geckodriver	INFO	Listening on 127.0.0.1:43241
+1731057428736	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "55021" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileipxq9r"
+*** You are running in headless mode.
+Gtk-Message: 14:47:08.773: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731057429444	Marionette	INFO	Marionette enabled
+1731057429754	Marionette	INFO	Listening on port 35869
+WebDriver BiDi listening on ws://127.0.0.1:55021
+Read port: 35869
+1731057430000	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 915))
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 2913 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731057463882	Marionette	INFO	Stopped listening on port 35869
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.error: services.settings:
+  main/addons-manager-settings Signature failed  [Exception... "<no message>"  nsresult: "0x8046001e (<unknown>)"  location: "JS frame :: resource://gre/modules/ServiceRequest.sys.mjs :: open :: line 133"  data: no]
+console.error: services.settings:
+Object
+  - prototype Object
+    - columnNumber = 0
+    - data = null
+    - filename = resource://gre/modules/ServiceRequest.sys.mjs
+    - lineNumber = 133
+    - location = {"name":"open","filename":"resource://gre/modules/ServiceRequest.sys.mjs","sourceId":24,"lineNumber":133,"columnNumber":11,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/Utils.sys.mjs","name":"fetch/<","sourceId":23,"lineNumber":268,"columnNumber":15,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/Utils.sys.mjs","name":"fetch","sourceId":23,"lineNumber":219,"columnNumber":12,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/RemoteSettingsClient.sys.mjs","name":"_validateCollectionSignature","sourceId":21,"lineNumber":1009,"columnNumber":47,"asyncCause":null,"asyncCaller":null,"caller":{"filename":"resource://services-settings/RemoteSettingsClient.sys.mjs","name":"_importChanges","sourceId":21,"lineNumber":1088,"columnNumber":20,"asyncCause":null,"asyncCaller":null,"caller":null,"formattedStack":"_importChanges@resource://services-settings/RemoteSettingsClient.sys.mjs:1088:20\n","nativeSavedFrame":{}},"formattedStack":"_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\n_importChanges@resource://services-settings/RemoteSettingsClient.sys.mjs:1088:20\n","nativeSavedFrame":{}},"formattedStack":"fetch@resource://services-settings/Utils.sys.mjs:219:12\n_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\n_importChanges@resource://services-settings/RemoteSettingsClient.sys.mjs:1088:20\n","nativeSavedFrame":{}},"formattedStack":"fetch/<@resource://services-settings/Utils.sys.mjs:268:15\nfetch@resource://services-settings/Utils.sys.mjs:219:12\n_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\n_importChanges@resource://services-settings/RemoteSettingsClient.sys.mjs:1088:20\n","nativeSavedFrame":{}},"formattedStack":"open@resource://gre/modules/ServiceRequest.sys.mjs:133:11\nfetch/<@resource://services-settings/Utils.sys.mjs:268:15\nfetch@resource://services-settings/Utils.sys.mjs:219:12\n_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47\n_importChanges@resource://services-settings/RemoteSettingsClient.sys.mjs:1088:20\n","nativeSavedFrame":{}}
+    - message =
+    - name =
+    - result = 2152071198
+    - stack = open@resource://gre/modules/ServiceRequest.sys.mjs:133:11|fetch/<@resource://services-settings/Utils.sys.mjs:268:15|fetch@resource://services-settings/Utils.sys.mjs:219:12|_validateCollectionSignature@resource://services-settings/RemoteSettingsClient.sys.mjs:1009:47|_importChanges@resource://services-settings/RemoteSettingsClient.sys.mjs:1088:20|
+  - prototype Object
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+console.warn: services.settings: main/partitioning-exempt-urls sync interrupted by shutdown
+console.warn: services.settings: main/translations-wasm sync interrupted by shutdown
+console.warn: services.settings: main/search-config-overrides-v2 sync interrupted by shutdown
+console.error: (new AbortError("IndexedDB: main/devtools-news getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1731057489001	geckodriver	INFO	Listening on 127.0.0.1:48141
+1731057489167	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "53437" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilezK78DD"
+*** You are running in headless mode.
+Gtk-Message: 14:48:09.203: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731057490087	Marionette	INFO	Marionette enabled
+1731057490483	Marionette	INFO	Listening on port 35369
+WebDriver BiDi listening on ws://127.0.0.1:53437
+Read port: 35369
+1731057490743	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: BackupService: "Failed to measure for resource: miscellaneous" (new NotFoundError("Could not stat `/tmp/rust_mozprofilezK78DD/storage/permanent/chrome/idb/2918063365piupsah.sqlite-journal': file does not exist (NS_ERROR_FILE_NOT_FOUND)", (void 0)))
+console.error: ({})
+JavaScript error: https://static.criteo.net/banners/js/vpaidjs/stable/vpaid-wrapper-static-video.js, line 1: TypeError: this.adsManager is undefined
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 1693 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731057543029	Marionette	INFO	Stopped listening on port 35369
+JavaScript warning: https://a.vdo.ai/core/dependencies_dev_2912/vdo.min.js?v=v5.2.6, line 2: Script terminated by timeout at:
+@https://a.vdo.ai/core/dependencies_dev_2912/vdo.min.js?v=v5.2.6:2:601872
+
+JavaScript error: https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js, line 128: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731057753392	geckodriver	INFO	Listening on 127.0.0.1:39729
+1731057754156	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "33483" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileq2nqyV"
+*** You are running in headless mode.
+Gtk-Message: 14:52:34.191: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731057755075	Marionette	INFO	Marionette enabled
+1731057755471	Marionette	INFO	Listening on port 32969
+WebDriver BiDi listening on ws://127.0.0.1:33483
+Read port: 32969
+1731057755771	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 1021 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731057794944	Marionette	INFO	Stopped listening on port 32969
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731058000149	geckodriver	INFO	Listening on 127.0.0.1:41975
+1731058000465	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "55801" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileD1BDyF"
+*** You are running in headless mode.
+Gtk-Message: 14:56:40.501: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731058001214	Marionette	INFO	Marionette enabled
+1731058001557	Marionette	INFO	Listening on port 40157
+Read port: 40157
+WebDriver BiDi listening on ws://127.0.0.1:55801
+1731058001661	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 6137 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://static.criteo.net/banners/js/vpaidjs/stable/vpaid-wrapper-static-video.js, line 1: TypeError: this.adsManager is undefined
+1731058056986	Marionette	INFO	Stopped listening on port 40157
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1731058223513	geckodriver	INFO	Listening on 127.0.0.1:55679
+1731058224521	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "33661" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile5p1foN"
+*** You are running in headless mode.
+Gtk-Message: 15:00:24.623: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731058225865	Marionette	INFO	Marionette enabled
+1731058226449	Marionette	INFO	Listening on port 40265
+WebDriver BiDi listening on ws://127.0.0.1:33661
+Read port: 40265
+1731058226764	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 1859 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731058301515	Marionette	INFO	Stopped listening on port 40265
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
