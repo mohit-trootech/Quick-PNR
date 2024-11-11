@@ -18,7 +18,7 @@ class UserAdmin(UserAdmin):
         "age",
         "address",
     )
-    readonly_fields = ("id", "last_login", "date_joined", "profile_image")
+    readonly_fields = ("id", "last_login", "date_joined", "profile_image", "google_id")
     list_filter = ("is_staff", "is_superuser", "is_active", "groups")
     search_fields = ("username", "first_name", "last_name", "email")
     ordering = ("username",)
@@ -30,7 +30,7 @@ class UserAdmin(UserAdmin):
         (
             None,
             {
-                "fields": ["id"],
+                "fields": ["id", "google_id"],
             },
         ),
         (

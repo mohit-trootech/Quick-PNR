@@ -204,3 +204,24 @@ class ForgotPasswordSerializer(serializers.Serializer):
         instance.set_password(validated_data["new_password"])
         instance.save(update_fields=["password"])
         return instance
+
+
+class GoogleAuthenticationLogin(serializers.Serializer):
+    google_id = serializers.CharField(required=True)
+    email = serializers.EmailField(required=True)
+    username = serializers.CharField(required=False)
+
+
+class GoogleAuthenticationSignup(GoogleAuthenticationLogin):
+    first_name = serializers.CharField(required=True)
+
+    def create(self, validated_data):
+        validated_data["username"] = validated_data["email"]
+        return User.objects.create(**validated_data)
+
+    def validate_email(self, value):
+        try:
+            User.objects.get(email=value)
+        except User.DoesNotExist:
+            return value
+        raise serializers.ValidationError(["User with this email already exists"])

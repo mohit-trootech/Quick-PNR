@@ -28,6 +28,9 @@ class User(AbstractUser):
     )
     age = models.IntegerField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
+    google_id = models.CharField(
+        blank=True, null=True, verbose_name=_("Google ID"), unique=True, max_length=255
+    )
 
     @property
     def profile_image(self):

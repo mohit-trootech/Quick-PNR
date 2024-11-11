@@ -8,6 +8,8 @@ from users.api.api import (
     EmailVerifyView,
     ChangePasswordView,
     ForgotPasswordView,
+    GoogleLoginView,
+    GoogleSignupView,
 )
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
@@ -24,4 +26,6 @@ urlpatterns = [
     path("verify-email/", EmailVerifyView.as_view(), name="verify-email"),
     path("change-password/", ChangePasswordView.as_view(), name="change-password"),
     path("forgot-password/", ForgotPasswordView.as_view(), name="forgot-password"),
+    path("auth-google-signup/", GoogleSignupView.as_view(), name="auth-google-signup"),
+    path("auth-google-login/", GoogleLoginView.as_view(), name="auth-google-login"),
 ]

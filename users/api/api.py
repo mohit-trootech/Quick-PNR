@@ -9,6 +9,8 @@ from users.api.serializers import (
     EmailVerifySerializer,
     ChangePasswordSerializer,
     ForgotPasswordSerializer,
+    GoogleAuthenticationLogin,
+    GoogleAuthenticationSignup,
 )
 from users.tasks import (
     registration_mail,
@@ -17,7 +19,7 @@ from users.tasks import (
     reset_password_done,
 )
 from utils.utils import AuthService
-from rest_framework.generics import UpdateAPIView
+from rest_framework.generics import UpdateAPIView, CreateAPIView
 
 User = get_model("users", "User")
 
@@ -176,3 +178,40 @@ class ForgotPasswordView(UpdateAPIView):
             {"message": "Password Changed Successfully"},
             status=status.HTTP_200_OK,
         )
+
+
+class GoogleSignupView(CreateAPIView):
+    """Google Signup API View"""
+
+    permission_classes = [permissions.AllowAny]
+    serializer_class = GoogleAuthenticationSignup
+
+    def post(self, request, *args, **kwargs):
+        """Create New User"""
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class GoogleLoginView(CreateAPIView):
+    """Google Login API View"""
+
+    permission_classes = [permissions.AllowAny]
+    serializer_class = GoogleAuthenticationLogin
+
+    def post(self, request, *args, **kwargs):
+        """Google Login"""
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        try:
+            return Response(
+                AuthService().get_auth_tokens_for_user(
+                    User.objects.get(id=serializer.data["google_id"])
+                ),
+                status=status.HTTP_200_OK,
+            )
+        except User.DoesNotExist:
+            return Response(
+                {"message": "User Not Found"}, status=status.HTTP_404_NOT_FOUND
+            )
