@@ -6,6 +6,7 @@ from django.contrib.auth.password_validation import (
 from users.contants import UserRegistrationMessages, AuthConstantsMessages, ModelFields
 from django.contrib.auth import authenticate
 from django.utils.timezone import now
+from django.core.exceptions import ObjectDoesNotExist
 
 User = get_model("users", "User")
 Otp = get_model("users", "Otp")
@@ -16,7 +17,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
     A Simple Registration Serilizer for User Signup Process
     """
 
-    confirm_password = serializers.CharField(write_only=True, required=False)
+    confirm_password = serializers.CharField(write_only=True, required=True)
 
     class Meta:
         model = User
@@ -29,13 +30,14 @@ class RegistrationSerializer(serializers.ModelSerializer):
             "last_name",
             "confirm_password",
         ]
-        extra_kwargs = {"password": {"write_only": True}}
+        extra_kwargs = {
+            "password": {"write_only": True, "validators": [password_strength]}
+        }
 
-    def validate_password(self, password):
-        """Validate Password Matches with Confirm Password"""
-        password_strength(password)
-        if password == self.initial_data["confirm_password"]:
-            return super().validate(password)
+    def validate(self, attrs):
+        attrs = super().validate(attrs)
+        if attrs["password"] == attrs["confirm_password"]:
+            return attrs
         return serializers.ValidationError(
             UserRegistrationMessages.PASSWORD_DOES_NOT_MATCH
         )
@@ -112,13 +114,16 @@ class EmailVerifySerializer(serializers.ModelSerializer):
         # Check it OTP Expired
 
         user = self.context["request"].user
-        if user.otp.expiry < now():
-            """If Expiry Date if Smaller Than Current Datetime Means OTP is Expired Hence Raise OTP Expiry Validation Error"""
-            raise serializers.ValidationError(AuthConstantsMessages.OTP_EXPIRED)
-        if user.otp.otp != value:
-            """Check if OTP is Validated"""
-            raise serializers.ValidationError(AuthConstantsMessages.INVALID_OTP)
-        return value
+        try:
+            if user.otp.otp != value:
+                """Check if OTP is Validated"""
+                raise serializers.ValidationError(AuthConstantsMessages.INVALID_OTP)
+            if user.otp.expiry < now():
+                """If Expiry Date if Smaller Than Current Datetime Means OTP is Expired Hence Raise OTP Expiry Validation Error"""
+                raise serializers.ValidationError(AuthConstantsMessages.OTP_EXPIRED)
+            return value
+        except ObjectDoesNotExist:
+            raise serializers.ValidationError(AuthConstantsMessages.OTP_NOT_FOUND)
 
     def update(self, instance, validated_data):
         """Update User Email"""

@@ -119,6 +119,7 @@ class EmailVerifyView(UpdateAPIView):
             instance=request.user, data=request.data, context={"request": request}
         )
         serializer.is_valid(raise_exception=True)
+        serializer.save()
         return Response(
             {"message": "Email Verified Successfully"},
             status=status.HTTP_200_OK,
