@@ -2798,3 +2798,46 @@ console.error: ({})
 JavaScript warning: https://pagead2.googlesyndication.com/bg/t7V1Msa_Lv3dBKM-cTxmhCq7vk8Gqogg02CJlMcExwE.js line 2 > eval line 1734 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript error: https://static.criteo.net/banners/js/vpaidjs/stable/vpaid-wrapper-static-video.js, line 1: TypeError: this.adsManager is undefined
 1731064475047	Marionette	INFO	Stopped listening on port 35391
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/local/share/doc /usr/local/share/doc none bind,ro 0 0): cannot open directory "/usr/local/share": permission denied
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/gimp/2.0/help /usr/share/gimp/2.0/help none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/gimp/2.0/help" because it would affect the host in "/var/lib/snapd"
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/javascript/jquery /usr/share/javascript/jquery none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/javascript/jquery" because it would affect the host in "/var/lib/snapd"
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/javascript/sphinxdoc /usr/share/javascript/sphinxdoc none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/javascript/sphinxdoc" because it would affect the host in "/var/lib/snapd"
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/sphinx_rtd_theme /usr/share/sphinx_rtd_theme none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/sphinx_rtd_theme" because it would affect the host in "/var/lib/snapd"
+update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/share/xubuntu-docs /usr/share/xubuntu-docs none bind,ro 0 0): cannot write to "/var/lib/snapd/hostfs/usr/share/xubuntu-docs" because it would affect the host in "/var/lib/snapd"
+1731297087165	geckodriver	INFO	Listening on 127.0.0.1:36463
+1731297088064	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "40333" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileJjzar4"
+*** You are running in headless mode.
+Gtk-Message: 09:21:28.102: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731297089067	Marionette	INFO	Marionette enabled
+1731297089488	Marionette	INFO	Listening on port 35255
+WebDriver BiDi listening on ws://127.0.0.1:40333
+Read port: 35255
+1731297089748	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://pagead2.googlesyndication.com/bg/zPal0F9JdGSYd7tbhxWqeHRyq2rU723BozYmngBYoPc.js line 2 > eval line 5242 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/MWPQWFyFjv3_huZMZjN5dSae-XtIFck4rY9Dm3-smQ4.js line 2 > eval line 5591 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731297137084	Marionette	INFO	Stopped listening on port 35255
+1731304816562	geckodriver	INFO	Listening on 127.0.0.1:52001
+1731304816837	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/snap/firefox/current/ ... ss" "--remote-debugging-port" "51415" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilezX5UGj"
+*** You are running in headless mode.
+Gtk-Message: 11:30:16.873: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1731304817351	Marionette	INFO	Marionette enabled
+1731304817727	Marionette	INFO	Listening on port 39673
+Read port: 39673
+WebDriver BiDi listening on ws://127.0.0.1:51415
+1731304817835	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+console.error: ({})
+JavaScript warning: https://api.b2c.com/api/init-6188239q2mgmreg8kjtf.js?adID=592577475&advertiserID=5481501&campaignID=31418751&creativeID=219629761&placementID=400611962&environment=j&siteid=9008513&country=ct=IN&st=&city=52032&dma=0&zp=380054&bw=4&match=0&site=N339201.4066079OMDPROGRAMMATICUA&landingpage=https://www.visitdubai.com/en/travel-to-dubai/in%3Futm_source%3Dprogrammatic%26utm_medium%3Ddisplay%26utm_campaign%3Dtacticalaonapac%26utm_term%3Dind-en_awholenewyou%26utm_content%3Dconsideration_banner728x90_OPXGoogleInmarketall%26dclid%3D%25edclid!, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/MWPQWFyFjv3_huZMZjN5dSae-XtIFck4rY9Dm3-smQ4.js line 2 > eval line 801 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/MWPQWFyFjv3_huZMZjN5dSae-XtIFck4rY9Dm3-smQ4.js line 2 > eval line 2316 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1731304855681	Marionette	INFO	Stopped listening on port 39673
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.

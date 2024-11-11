@@ -110,6 +110,7 @@ class EmailVerifySerializer(serializers.ModelSerializer):
     def validate_otp(self, value):
         """Validate OTP"""
         # Check it OTP Expired
+
         user = self.context["request"].user
         if user.otp.expiry < now():
             """If Expiry Date if Smaller Than Current Datetime Means OTP is Expired Hence Raise OTP Expiry Validation Error"""
@@ -117,7 +118,84 @@ class EmailVerifySerializer(serializers.ModelSerializer):
         if user.otp.otp != value:
             """Check if OTP is Validated"""
             raise serializers.ValidationError(AuthConstantsMessages.INVALID_OTP)
-        user.otp.delete()
-        user.is_verified = ModelFields.ACTIVE_STATUS
-        user.save(update_fields=["is_verified"])
         return value
+
+    def update(self, instance, validated_data):
+        """Update User Email"""
+        instance.otp.delete()
+        instance.is_verified = ModelFields.ACTIVE_STATUS
+        instance.save(update_fields=["is_verified"])
+        return instance
+
+
+class ChangePasswordSerializer(serializers.Serializer):
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True, validators=[password_strength])
+    confirm_password = serializers.CharField(required=True)
+
+    def validate(self, attrs):
+        """Validation Password Validation"""
+        user = self.context["request"].user
+        old_password = attrs["old_password"]
+        new_password = attrs["new_password"]
+        confirm_password = attrs["confirm_password"]
+        if not user.check_password(old_password):
+            raise serializers.ValidationError({"old_password": ["Wrong Password"]})
+        if old_password == new_password:
+            raise serializers.ValidationError(
+                {"new_password": ["New Password Should Not Be Same As Old Password"]}
+            )
+
+        if new_password != confirm_password:
+            raise serializers.ValidationError(
+                {"confirm_password": ["Password Does Not Match"]}
+            )
+        return attrs
+
+    def update(self, instance, validated_data):
+        """Update User Password"""
+        instance.set_password(validated_data["new_password"])
+        instance.save(update_fields=["password"])
+        return instance
+
+
+class ForgotPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField(required=True)
+    otp = serializers.IntegerField(required=False)
+    # new_password = serializers.CharField(required=False, validators=[password_strength])
+    new_password = serializers.CharField(required=False)
+    confirm_password = serializers.CharField(required=False)
+
+    def validate_email(self, value):
+        try:
+            User.objects.get(email=value)
+        except User.DoesNotExist:
+            raise serializers.ValidationError(["User with this email does not exist"])
+        return value
+
+    def validate_otp(self, value):
+        """Validate OTP"""
+        user = User.objects.get(email=self.initial_data["email"])
+        if user.otp.expiry < now():
+            raise serializers.ValidationError(AuthConstantsMessages.OTP_EXPIRED)
+        if user.otp.otp != value:
+            raise serializers.ValidationError(AuthConstantsMessages.INVALID_OTP)
+        return value
+
+    def validate(self, attrs):
+        """Validation Password Validation"""
+        attrs = super().validate(attrs)
+        if "otp" not in attrs:
+            return attrs
+        new_password = attrs["new_password"]
+        confirm_password = attrs["confirm_password"]
+        if new_password != confirm_password:
+            raise serializers.ValidationError(
+                {"confirm_password": ["Password Does Not Match"]}
+            )
+        return attrs
+
+    def update(self, instance, validated_data):
+        instance.set_password(validated_data["new_password"])
+        instance.save(update_fields=["password"])
+        return instance

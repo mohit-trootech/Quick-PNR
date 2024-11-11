@@ -93,6 +93,7 @@ class PnrScrapping:
                 raise Exception(err)
         finally:
             self.driver.quit()
+            print("Driver Closed Successfully")
 
 
 class FormatData:

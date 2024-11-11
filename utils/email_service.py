@@ -155,3 +155,36 @@ class EmailService:
                 ),
             ),
         )
+
+    def reset_password_otp(self, user):
+        """Generates reset password otp to user's email address"""
+        template = self.get_template(email_type=EmailTemplates.PASSWORD_RESET)
+        try:
+            otp = Otp.objects.get(user=user).delete()
+        except Otp.DoesNotExist:
+            pass
+        otp, created = Otp.objects.get_or_create(
+            user=user, expiry=now() + timedelta(minutes=10)
+        )
+        return self.send_mail(
+            template.subject,
+            template.body.format(
+                otp=otp.otp, expiry=otp.expiry.strftime("%Y-%m-%d %H::%M::%S")
+            ),
+            template.is_html,
+            [user.email],
+            template.template.format(
+                otp=otp.otp, expiry=otp.expiry.strftime("%Y-%m-%d %H::%M::%S")
+            ),
+        )
+
+    def reset_password_done(self, user):
+        """Sends a password reset done email to the specified user."""
+        template = self.get_template(email_type=EmailTemplates.PASSWORD_RESET_DONE)
+        return self.send_mail(
+            template.subject,
+            template.body.format(username=user.username),
+            template.is_html,
+            [user.email],
+            template.template,
+        )

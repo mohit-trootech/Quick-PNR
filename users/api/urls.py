@@ -6,6 +6,8 @@ from users.api.api import (
     UserProfileView,
     EmailUpdateView,
     EmailVerifyView,
+    ChangePasswordView,
+    ForgotPasswordView,
 )
 from django.urls import path, include
 from rest_framework.routers import SimpleRouter
@@ -20,4 +22,6 @@ urlpatterns = [
     path("profile/", UserProfileView.as_view(), name="profile"),
     path("update-email/", EmailUpdateView.as_view(), name="update-email"),
     path("verify-email/", EmailVerifyView.as_view(), name="verify-email"),
+    path("change-password/", ChangePasswordView.as_view(), name="change-password"),
+    path("forgot-password/", ForgotPasswordView.as_view(), name="forgot-password"),
 ]

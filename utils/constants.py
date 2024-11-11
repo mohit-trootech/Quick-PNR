@@ -64,11 +64,15 @@ class EmailTemplates:
     VERIFY_EMAIL = "verify_email"
     REGISTRED_SUCCESSFULLY = "registered"
     PNR_DETAILS = "pnr_details"
+    PASSWORD_RESET = "password_reset"
+    PASSWORD_RESET_DONE = "password_reset_done"
 
     EMAIL_TYPES = (
         (VERIFY_EMAIL, _("Verify Email")),
         (REGISTRED_SUCCESSFULLY, _("Registered Successfully")),
         (PNR_DETAILS, _("PNR Details")),
+        (PASSWORD_RESET_DONE, _("Password Reset Done")),
+        (PASSWORD_RESET, _("Password Reset")),
     )
 
 
