@@ -36,7 +36,7 @@ class PnrDetail(ActivatorModel, TimeStampedModel):
     expiry = models.DateTimeField(verbose_name=ModelVerbose.EXPIRY)
 
     class Meta:
-        verbose_name = "PNR Detail"
+        verbose_name = ModelVerbose.PNR_DETAIL
 
     def soft_delete(self):
         """Soft Delete PNR Details"""
@@ -67,4 +67,4 @@ class PassengerDetail(models.Model):
     )
 
     class Meta:
-        verbose_name = "Passenger Detail"
+        verbose_name = ModelVerbose.PASSENGER_DETAIL

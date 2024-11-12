@@ -21,6 +21,8 @@ class ModelVerbose:
     CURRENT_STATUS = "current status"
     EXPIRY = "pnr expiry"
     COACH_POSITION = "coach position"
+    PNR_DETAIL = "PNR Detail"
+    PASSENGER_DETAIL = "Passenger Detail"
 
 
 class ModelsConstants:
@@ -29,13 +31,24 @@ class ModelsConstants:
     PASSENGERS_DETAILS = "passengers_details"
 
 
-class MessageConstants:
+class ReponseMessages:
     """Message Constants"""
 
+    MULTIPLE_PNR_FOUND_ERROR_HANDLED = "Multiple PNRs Found Error Handled, Last Modified PNR Saved Else Deleted - {pnr}"
     MULTIPLE_PNR_FOUND = "Multiple PNR Found"
     PNR_NOT_FOUND = "PNR Not Found"
-    INVALID_PNR = "Invalid PNR Number"
-    INVALID_PAGE = "Invalid Page"
-    CAPTCHA_MODEL_OPENED = "Captcha Modal Opened"
-    PNR_NUMBER_ENTERED = "PNR Number Entered Successfully"
     PNR_DETAILS_MAILED = "PNR Details Mailed Successfully"
+
+
+class ScrappingConstants:
+    """PNR Scrapping Constants"""
+
+    PNR_NUMBER_ENTERED = "PNR Number Entered Successfully"
+    CAPTCHA_MODEL_OPENED = "Captcha Modal Opened"
+    INVALID_PAGE = "Invalid Page"
+
+
+class PnrSerializerConstants:
+    """PNR Serializers Constants"""
+
+    INVALID_PNR = "Invalid PNR Number"

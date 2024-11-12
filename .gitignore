@@ -5,4 +5,4 @@ __pycache__
 .images
 .pnrlog
 .ruff_cache
-debug.log
+*.log

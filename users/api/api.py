@@ -13,13 +13,13 @@ from users.api.serializers import (
     GoogleAuthenticationSignup,
 )
 from users.tasks import (
-    registration_mail,
     generate_otp,
     reset_password_otp,
     reset_password_done,
 )
 from utils.utils import AuthService
 from rest_framework.generics import UpdateAPIView, CreateAPIView
+from users.constants import ResponseMessages
 
 User = get_model("users", "User")
 
@@ -33,8 +33,10 @@ class RegistrationApiView(mixins.CreateModelMixin, viewsets.GenericViewSet):
     def create(self, request, *args, **kwargs):
         """Register New User"""
         instance = super().create(request, *args, **kwargs)
-        registration_mail.delay(instance.data["id"])
         return instance
+
+
+Response
 
 
 class LoginApiView(views.APIView):
@@ -105,12 +107,12 @@ class EmailVerifyView(UpdateAPIView):
         generate_otp.delay(request.user.id)
         try:
             return Response(
-                {"message": "OTP Sent Successfully"}, status=status.HTTP_200_OK
+                {"message": ResponseMessages.OTP_GENERATED}, status=status.HTTP_200_OK
             )
         except Exception as err:
             raise Response(
                 {
-                    "message": f"Failed to send OTP, {err}",
+                    "message": ResponseMessages.FAILED_TO_GENERATE_OTP.format(err=err),
                 },
                 status=status.HTTP_400_BAD_REQUEST,
             )
@@ -123,7 +125,7 @@ class EmailVerifyView(UpdateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(
-            {"message": "Email Verified Successfully"},
+            {"message": ResponseMessages.EMAIL_VERIFIED},
             status=status.HTTP_200_OK,
         )
 
@@ -142,7 +144,7 @@ class ChangePasswordView(UpdateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(
-            {"message": "Password Changed Successfully"},
+            {"message": ResponseMessages.PASSWORD_CHANGED_DONE},
             status=status.HTTP_200_OK,
         )
 
@@ -161,7 +163,7 @@ class ForgotPasswordView(UpdateAPIView):
         serializer.is_valid(raise_exception=True)
         reset_password_otp.delay(User.objects.get(email=request.data["email"]).id)
         return Response(
-            {"message": "Password Reset OTP Sent Successfully"},
+            {"message": ResponseMessages.PASSWORD_RESET_OTP_GENERATED},
             status=status.HTTP_200_OK,
         )
 
@@ -175,7 +177,7 @@ class ForgotPasswordView(UpdateAPIView):
         serializer.save()
         reset_password_done.delay(user.id)
         return Response(
-            {"message": "Password Changed Successfully"},
+            {"message": ResponseMessages.PASSWORD_RESET_DONE},
             status=status.HTTP_200_OK,
         )
 
@@ -207,11 +209,12 @@ class GoogleLoginView(CreateAPIView):
         try:
             return Response(
                 AuthService().get_auth_tokens_for_user(
-                    User.objects.get(id=serializer.data["google_id"])
+                    User.objects.get(google_id=serializer.data["google_id"])
                 ),
                 status=status.HTTP_200_OK,
             )
         except User.DoesNotExist:
             return Response(
-                {"message": "User Not Found"}, status=status.HTTP_404_NOT_FOUND
+                {"message": ResponseMessages.USER_NOT_FOUND},
+                status=status.HTTP_404_NOT_FOUND,
             )

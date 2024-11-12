@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "quickpnr",
     "users",
     "corsheaders",
+    "email_validator",
 ]
 
 # Middlewares

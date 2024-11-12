@@ -40,15 +40,42 @@ THUMBNAIL_PREVIEW_HTML = """<div class="warning" style="color:#000;width: 320px;
 class UserRegistrationMessages:
     """User Registration Constants Messages"""
 
-    PASSWORD_DOES_NOT_MATCH = _("Password Does Not Match")
-    EMAIL_EXIST_ERROR = _("Email Already Exists")
-    USERNAME_ALREADY_EXISTS = _("Username Already Exists")
+    PASSWORD_DOES_NOT_MATCH = _("Password does not match")
+    EMAIL_EXIST_ERROR = _("Email already exists")
+    USERNAME_ALREADY_EXISTS = _("Username already exists")
 
 
 class AuthConstantsMessages:
     """Auth Constants Messages"""
 
-    INVALID_EMAIL_OR_PASSWORD = _("Invalid Email or Password")
-    OTP_EXPIRED = _("OTP Expired, Please Generate a New OTP.")
-    INVALID_OTP = _("Invalid OTP, Please Try Again")
+    INVALID_EMAIL_OR_PASSWORD = _("Invalid email or password")
+    OTP_EXPIRED = _("OTP expired, please generate a new OTP.")
+    INVALID_OTP = _("Invalid OTP, please try again")
     OTP_NOT_FOUND = _("OTP not found generate a new one..")
+    USER_ALREADY_EXIST = _("User already exists with this email")
+    PASSWORD_DOES_NOT_MATCH = _("Password does not match")
+    NEW_PASSWORD_SAME_AS_OLD_PASSWORD = _("New password cannot be same as old password")
+    INVALID_PASSWORD = _("Invalid password")
+
+
+class ResponseMessages:
+    """Users Messages Constants"""
+
+    OTP_GENERATED = _("OTP generated successfully")
+    FAILED_TO_GENERATE_OTP = _("Failed to generate OTP, {err}")
+    EMAIL_VERIFIED = _("Email verified successfully")
+    PASSWORD_CHANGED_DONE = _("Password changed successfully")
+    PASSWORD_RESET_OTP_GENERATED = _("Password reset OTP generated successfully")
+    PASSWORD_RESET_DONE = _("Password reset successfully")
+    USER_NOT_FOUND = _("User not found")
+
+
+class VerboseNames:
+    """User Models Verbose name"""
+
+    PROFILE_IMAGE = _("Profile Image")
+    EMAIL_ADDRESS = _("Email Address")
+    VERIFICATION_STATUS = _("Verification Status")
+    AGE = _("Age")
+    ADDRESS = _("Address")
+    GOOGLE_ID = _("Google ID")

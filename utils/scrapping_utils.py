@@ -2,7 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from utils.constants import ElementTypes, PnrConstants, IDs
-from pnr.constants import MessageConstants
+from pnr.constants import ScrappingConstants
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from utils.image_filtering import CaptchaImageFiltering
@@ -56,12 +56,12 @@ class PnrScrapping:
                 == ElementTypes.BUTTON
             ):
                 self.pnr_input.send_keys(self.pnr)
-                print(MessageConstants.PNR_NUMBER_ENTERED)
+                print(ScrappingConstants.PNR_NUMBER_ENTERED)
                 self.capcha_modal_btn.click()
                 if self.capcha_modal_btn.is_displayed():
-                    print(MessageConstants.CAPTCHA_MODEL_OPENED)
+                    print(ScrappingConstants.CAPTCHA_MODEL_OPENED)
         else:
-            raise Exception(MessageConstants.INVALID_PAGE)
+            raise Exception(ScrappingConstants.INVALID_PAGE)
 
     def handle_captcha_image(self):
         """Handle Captcha Image"""

@@ -3,10 +3,13 @@ from utils.utils import get_model
 from django.contrib.auth.password_validation import (
     validate_password as password_strength,
 )
-from users.contants import UserRegistrationMessages, AuthConstantsMessages, ModelFields
+from users.constants import UserRegistrationMessages, AuthConstantsMessages, ModelFields
 from django.contrib.auth import authenticate
 from django.utils.timezone import now
 from django.core.exceptions import ObjectDoesNotExist
+from email_validator import validate_email as email_validation
+from email_validator import EmailNotValidError
+
 
 User = get_model("users", "User")
 Otp = get_model("users", "Otp")
@@ -38,9 +41,17 @@ class RegistrationSerializer(serializers.ModelSerializer):
         attrs = super().validate(attrs)
         if attrs["password"] == attrs["confirm_password"]:
             return attrs
-        return serializers.ValidationError(
-            UserRegistrationMessages.PASSWORD_DOES_NOT_MATCH
+        raise serializers.ValidationError(
+            {"confirm_password": [UserRegistrationMessages.PASSWORD_DOES_NOT_MATCH]}
         )
+
+    def validate_email(self, value):
+        """Validate Email Address"""
+        try:
+            email_validation(value)
+            return value
+        except EmailNotValidError as e:
+            raise serializers.ValidationError(str(e))
 
     def create(self, validated_data):
         password = validated_data.pop("confirm_password")
@@ -65,7 +76,7 @@ class LoginSerializer(serializers.Serializer):
         user = authenticate(**login_data)
         if not user:
             raise serializers.ValidationError(
-                AuthConstantsMessages.INVALID_EMAIL_OR_PASSWORD
+                {"non_field_errors": [AuthConstantsMessages.INVALID_EMAIL_OR_PASSWORD]}
             )
         return user
 
@@ -117,10 +128,14 @@ class EmailVerifySerializer(serializers.ModelSerializer):
         try:
             if user.otp.otp != value:
                 """Check if OTP is Validated"""
-                raise serializers.ValidationError(AuthConstantsMessages.INVALID_OTP)
+                raise serializers.ValidationError(
+                    {"otp": [AuthConstantsMessages.INVALID_OTP]}
+                )
             if user.otp.expiry < now():
                 """If Expiry Date if Smaller Than Current Datetime Means OTP is Expired Hence Raise OTP Expiry Validation Error"""
-                raise serializers.ValidationError(AuthConstantsMessages.OTP_EXPIRED)
+                raise serializers.ValidationError(
+                    {"otp": [AuthConstantsMessages.OTP_EXPIRED]}
+                )
             return value
         except ObjectDoesNotExist:
             raise serializers.ValidationError(AuthConstantsMessages.OTP_NOT_FOUND)
@@ -145,15 +160,21 @@ class ChangePasswordSerializer(serializers.Serializer):
         new_password = attrs["new_password"]
         confirm_password = attrs["confirm_password"]
         if not user.check_password(old_password):
-            raise serializers.ValidationError({"old_password": ["Wrong Password"]})
+            raise serializers.ValidationError(
+                {"old_password": [AuthConstantsMessages.INVALID_PASSWORD]}
+            )
         if old_password == new_password:
             raise serializers.ValidationError(
-                {"new_password": ["New Password Should Not Be Same As Old Password"]}
+                {
+                    "new_password": [
+                        AuthConstantsMessages.NEW_PASSWORD_SAME_AS_OLD_PASSWORD
+                    ]
+                }
             )
 
         if new_password != confirm_password:
             raise serializers.ValidationError(
-                {"confirm_password": ["Password Does Not Match"]}
+                {"confirm_password": [AuthConstantsMessages.PASSWORD_DOES_NOT_MATCH]}
             )
         return attrs
 
@@ -167,15 +188,14 @@ class ChangePasswordSerializer(serializers.Serializer):
 class ForgotPasswordSerializer(serializers.Serializer):
     email = serializers.EmailField(required=True)
     otp = serializers.IntegerField(required=False)
-    # new_password = serializers.CharField(required=False, validators=[password_strength])
-    new_password = serializers.CharField(required=False)
+    new_password = serializers.CharField(required=False, validators=[password_strength])
     confirm_password = serializers.CharField(required=False)
 
     def validate_email(self, value):
         try:
             User.objects.get(email=value)
         except User.DoesNotExist:
-            raise serializers.ValidationError(["User with this email does not exist"])
+            raise serializers.ValidationError(AuthConstantsMessages.USER_ALREADY_EXIST)
         return value
 
     def validate_otp(self, value):
@@ -196,7 +216,7 @@ class ForgotPasswordSerializer(serializers.Serializer):
         confirm_password = attrs["confirm_password"]
         if new_password != confirm_password:
             raise serializers.ValidationError(
-                {"confirm_password": ["Password Does Not Match"]}
+                {"confirm_password": [AuthConstantsMessages.PASSWORD_DOES_NOT_MATCH]}
             )
         return attrs
 
@@ -224,4 +244,4 @@ class GoogleAuthenticationSignup(GoogleAuthenticationLogin):
             User.objects.get(email=value)
         except User.DoesNotExist:
             return value
-        raise serializers.ValidationError(["User with this email already exists"])
+        raise serializers.ValidationError(AuthConstantsMessages.USER_ALREADY_EXIST)

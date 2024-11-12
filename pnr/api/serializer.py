@@ -3,7 +3,7 @@ from rest_framework import serializers
 from utils.utils import get_model
 from django.utils.timezone import timedelta
 from utils.exceptions import InvalidPnrNumber
-from pnr.constants import MessageConstants
+from pnr.constants import PnrSerializerConstants
 
 PnrDetail = get_model(app_name="pnr", model_name="PnrDetail")
 PassengerDetail = get_model(app_name="pnr", model_name="PassengerDetail")
@@ -17,11 +17,13 @@ class PnrSerializer(serializers.Serializer):
     def validate_pnr(self, value):
         """validate pnr number"""
         if not len(str(value)) == 10:
-            raise InvalidPnrNumber(MessageConstants.INVALID_PNR)
+            raise InvalidPnrNumber(PnrSerializerConstants.INVALID_PNR)
         return value
 
 
 class PassengerDetailSerializer(serializers.ModelSerializer):
+    """Passenger Detail Serializer"""
+
     class Meta:
         model = PassengerDetail
         fields = ["id", "name", "booking_status", "current_status", "pnr_details"]
@@ -29,6 +31,8 @@ class PassengerDetailSerializer(serializers.ModelSerializer):
 
 
 class PnrDetailSerializer(serializers.ModelSerializer):
+    """PNR Detail Serializer"""
+
     passengers_details = PassengerDetailSerializer(many=True, read_only=True)
 
     class Meta:
