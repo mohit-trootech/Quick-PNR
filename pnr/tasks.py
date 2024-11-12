@@ -20,10 +20,22 @@ def send_pnr_details(user_id, pnr_id):
 
 
 @shared_task
-def multiple_pnr_found(pnr):
+def multiple_pnr_found(pnr: int):
     """Reduce Multiple PNR to one only"""
     # Only Excluce Last Modified PNR
     PnrDetail.objects.filter(
         pk__in=PnrDetail.objects.filter(pnr=pnr).order_by("-modified")[1:]
     ).delete()
     return ReponseMessages.MULTIPLE_PNR_FOUND_ERROR_HANDLED.format(pnr=pnr)
+
+
+# @shared_task
+# def create_pnr_versions(pnr: int, data, update: bool = False):
+#     """Create PNR Versions"""
+#     pnr_details = PnrDetail.objects.get(pnr=pnr)
+#     version =
+#     if update:
+#         version = pnr_details.versions.count() + 1
+
+#     pnr_details.versions.create(version=version, data=data)
+#     return f"PNR Version {version} Created for PNR {pnr}"

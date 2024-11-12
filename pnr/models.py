@@ -34,6 +34,7 @@ class PnrDetail(ActivatorModel, TimeStampedModel):
         max_length=64, verbose_name=ModelVerbose.CHARTING_STATUS
     )
     expiry = models.DateTimeField(verbose_name=ModelVerbose.EXPIRY)
+    users = models.ManyToManyField("users.User", blank=True, related_name="pnrs")
 
     class Meta:
         verbose_name = ModelVerbose.PNR_DETAIL

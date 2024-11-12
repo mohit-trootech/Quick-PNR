@@ -3,6 +3,13 @@ from pnr.models import PassengerDetail, PnrDetail
 from django.contrib import admin
 
 
+# @admin.register(PnrVersion)
+# class PnrVersionAdmin(admin.ModelAdmin):
+#     list_display = ("pnr_details", "version")
+#     list_filter = ("pnr_details", "version")
+#     search_fields = ("pnr_details", "version")
+
+
 @admin.register(PassengerDetail)
 class PassengerDetailAdmin(admin.ModelAdmin):
     list_display = ("name", "pnr_details", "booking_status", "current_status")

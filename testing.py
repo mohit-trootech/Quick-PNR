@@ -2,8 +2,8 @@ from requests import post
 from multiprocessing import Pool
 
 
-token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxMzg5NDM5LCJpYXQiOjE3MzEzODU4MzksImp0aSI6ImU1MmUwOGU4ODkxMjQ4NjlhMzg1MDRhYjc0MzAxOWE1IiwidXNlcl9pZCI6MjJ9.ZVt4QHZvj8Oa6Dmd29nas2IbYARHFj2VrC4dvRUfNVc"
-pnr = 8425362963
+token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNDE2ODAyLCJpYXQiOjE3MzE0MTMyMDIsImp0aSI6Ijk0YTljYzIzY2Q4NDQ4ZGU5NjE3NmQ3ZmJkZDk4ZTM0IiwidXNlcl9pZCI6MX0.oTpWRrR1lU4Ny-jrxFZUD3P1KjbbZ-9lxhUA_QbF9iY"
+pnr = 8725278554
 
 
 def test_api(url):
@@ -28,4 +28,5 @@ if __name__ == "__main__":
     ]
     with Pool(processes=4) as pool:
         results = pool.map(test_api, urls)
+    breakpoint()
     print(results)

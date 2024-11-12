@@ -25,14 +25,18 @@ class PnrScrapper(APIView):
         pnr_serializer.is_valid(raise_exception=True)
         try:
             # Check if PNR details are available in Database.
-            pnr_details = PnrDetail.objects.get(
+            pnr_details = PnrDetail.objects.prefetch_related("passengers_details").get(
                 pnr=pnr_serializer.validated_data["pnr"],
-                status=ActivatorModel.ACTIVE_STATUS,
                 expiry__gt=now(),
             )
+            if pnr_details.status == ActivatorModel.INACTIVE_STATUS:
+                return Response(
+                    {"message": ReponseMessages.FLUSHED_PNR},
+                    status=status.HTTP_404_NOT_FOUND,
+                )
             serializer = PnrDetailSerializer(pnr_details)
             # Mail PNR Details to User.
-            send_pnr_details(request.user.id, serializer.data["id"])
+            send_pnr_details.delay(request.user.id, serializer.data["id"])
             return Response(
                 {"message": ReponseMessages.PNR_DETAILS_MAILED},
                 status=status.HTTP_200_OK,
@@ -54,11 +58,15 @@ class PnrScrapper(APIView):
         pnr_serializer.is_valid(raise_exception=True)
         try:
             # If PNR Exists in database return data from database
-            pnr_details = PnrDetail.objects.get(
+            pnr_details = PnrDetail.objects.prefetch_related("passengers_details").get(
                 pnr=pnr_serializer.validated_data["pnr"],
-                status=ActivatorModel.ACTIVE_STATUS,
                 expiry__gt=now(),
             )
+            if pnr_details.status == ActivatorModel.INACTIVE_STATUS:
+                return Response(
+                    {"message": ReponseMessages.FLUSHED_PNR},
+                    status=status.HTTP_404_NOT_FOUND,
+                )
             serializer = PnrDetailSerializer(pnr_details)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except PnrDetail.DoesNotExist:
@@ -66,6 +74,7 @@ class PnrScrapper(APIView):
             try:
                 scrapper = PnrScrapping(pnr_serializer.validated_data["pnr"])
                 data = scrapper()
+                data["users"] = [request.user.id]
                 serializer = PnrDetailSerializer(data=data)
                 serializer.is_valid(raise_exception=True)
 
@@ -78,9 +87,9 @@ class PnrScrapper(APIView):
                 except PnrDetail.DoesNotExist:
                     # If PNR details not available create details.
                     serializer.save()
-                    send_pnr_details.delay(
-                        request.user.id, serializer.data["id"]
-                    )  # Todo: Use Signals to Send Pnr Details
+                send_pnr_details.delay(
+                    request.user.id, serializer.data["id"]
+                )  # TODO: Use Signals to Send Pnr Details
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             except PNRNotFound as pnr_not_found:
                 # Handle others exception related to Scrapping PNR.
@@ -106,11 +115,15 @@ class PnrScrapper(APIView):
         pnr_serializer.is_valid(raise_exception=True)
         try:
             # Get the PNR object from Model.
-            obj = PnrDetail.objects.get(
+            obj = PnrDetail.objects.prefetch_related("passengers_details").get(
                 pnr=pnr_serializer.validated_data["pnr"],
-                status=ActivatorModel.ACTIVE_STATUS,
                 expiry__gt=now(),
             )
+            if obj.status == ActivatorModel.INACTIVE_STATUS:
+                return Response(
+                    {"message": ReponseMessages.FLUSHED_PNR},
+                    status=status.HTTP_404_NOT_FOUND,
+                )
             # Scrap Updated Details
             scrapper = PnrScrapping(pnr_serializer.validated_data["pnr"])
             data = scrapper()

@@ -7,6 +7,15 @@ from pnr.constants import PnrSerializerConstants
 
 PnrDetail = get_model(app_name="pnr", model_name="PnrDetail")
 PassengerDetail = get_model(app_name="pnr", model_name="PassengerDetail")
+User = get_model(app_name="users", model_name="User")
+
+
+class UserReference(serializers.ModelSerializer):
+    """User Reference Serializer"""
+
+    class Meta:
+        model = User
+        fields = ["id", "email"]
 
 
 class PnrSerializer(serializers.Serializer):
@@ -55,7 +64,6 @@ class PnrDetailSerializer(serializers.ModelSerializer):
             "charting_status",
             "passengers_details",
         ]
-        depth = 1
 
     def create(self, validated_data):
         validated_data["expiry"] = validated_data["boarding_date"] + timedelta(days=5)

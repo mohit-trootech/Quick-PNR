@@ -16,6 +16,12 @@ def _upload_to(self, filename):
     return "users/{id}/{filename}".format(id=self.id, filename=filename)
 
 
+def _random_otp(self):
+    import random
+
+    return random.randint(100000, 999999)
+
+
 class User(AbstractUser):
     """Abstract User Model"""
 
@@ -58,7 +64,7 @@ class User(AbstractUser):
 class Otp(TimeStampedModel):
     """OTP Models to Store OTP Details"""
 
-    otp = models.IntegerField()
+    otp = models.IntegerField(default=_random_otp)
     expiry = models.DateTimeField()
     user = models.OneToOneField(
         "users.User", on_delete=models.CASCADE, related_name="otp"
@@ -68,7 +74,4 @@ class Otp(TimeStampedModel):
         return "{user}'s OTP".format(user=self.user.username)
 
     def save(self, *args, **kwargs):
-        from random import randint
-
-        self.otp = randint(100000, 999999)
         return super(Otp, self).save(*args, **kwargs)

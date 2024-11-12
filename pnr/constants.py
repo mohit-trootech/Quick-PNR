@@ -38,6 +38,7 @@ class ReponseMessages:
     MULTIPLE_PNR_FOUND = "Multiple PNR Found"
     PNR_NOT_FOUND = "PNR Not Found"
     PNR_DETAILS_MAILED = "PNR Details Mailed Successfully"
+    FLUSHED_PNR = "Flushed PNR Requested"
 
 
 class ScrappingConstants:
