@@ -8,7 +8,7 @@ from pnr.models import PnrDetail
 
 @receiver(post_save, sender=PnrDetail)
 def send_pnr_details_signal(sender, instance, created, **kwargs):
-    breakpoint()
+    # TODO: Update PNR Details Model Such That Takes User M2M Who Requested for PNR Details
     return True
     # if created:
     # send_pnr_details.delay(instance.user_id, instance.id)

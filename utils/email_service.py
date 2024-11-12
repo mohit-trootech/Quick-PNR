@@ -66,12 +66,12 @@ class EmailService:
         return self.send_mail(
             template.subject,
             template.body.format(
-                otp=otp.otp, expiry=otp.expiry.strftime("%Y-%m-%d %H::%M::%S")
+                otp=otp.otp, expiry=otp.expiry.strftime("%B %d %Y, %H:%M %p %Z")
             ),
             template.is_html,
             [user.email],
             template.template.format(
-                otp=otp.otp, expiry=otp.expiry.strftime("%Y-%m-%d %H::%M::%S")
+                otp=otp.otp, expiry=otp.expiry.strftime("%B %d %Y, %H:%M %p %Z")
             ),
         )
 
@@ -169,12 +169,12 @@ class EmailService:
         return self.send_mail(
             template.subject,
             template.body.format(
-                otp=otp.otp, expiry=otp.expiry.strftime("%Y-%m-%d %H::%M::%S")
+                otp=otp.otp, expiry=otp.expiry.strftime("%B %d %Y, %H:%M %p %Z")
             ),
             template.is_html,
             [user.email],
             template.template.format(
-                otp=otp.otp, expiry=otp.expiry.strftime("%Y-%m-%d %H::%M::%S")
+                otp=otp.otp, expiry=otp.expiry.strftime("%B %d %Y, %H:%M %p %Z")
             ),
         )
 
