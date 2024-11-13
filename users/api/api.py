@@ -36,9 +36,6 @@ class RegistrationApiView(mixins.CreateModelMixin, viewsets.GenericViewSet):
         return instance
 
 
-Response
-
-
 class LoginApiView(views.APIView):
     """User Login API View"""
 

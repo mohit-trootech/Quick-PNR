@@ -6,7 +6,9 @@ from utils.utils import get_model
 from django_extensions.db.models import ActivatorModel
 from utils.constants import EmailTemplates
 from django.utils.timezone import now, timedelta
+from logging import Logger
 
+logger = Logger(__name__)
 EmailTemplate = get_model("quickpnr", "EmailTemplate")
 Otp = get_model(app_name="users", model_name="Otp")
 
@@ -40,6 +42,7 @@ class EmailService:
         if is_html:
             msg.attach_alternative(template, "text/html")
         msg.send(fail_silently=False)
+        logger.info(f"Email Send Successfully : Subject: {subject}")
         return f"Email Send Successfully : Subject: {subject}"
 
     def registration_mail(self, user):

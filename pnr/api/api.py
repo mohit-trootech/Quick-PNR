@@ -87,9 +87,9 @@ class PnrScrapper(APIView):
                 except PnrDetail.DoesNotExist:
                     # If PNR details not available create details.
                     serializer.save()
-                send_pnr_details.delay(
-                    request.user.id, serializer.data["id"]
-                )  # TODO: Use Signals to Send Pnr Details
+                    send_pnr_details.delay(
+                        request.user.id, serializer.data["id"]
+                    )  # TODO: Use Signals to Send Pnr Details
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             except PNRNotFound as pnr_not_found:
                 # Handle others exception related to Scrapping PNR.
